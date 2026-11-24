@@ -4,7 +4,7 @@ Actualizado: 24/11/2026
 
 ## En curso
 
-- [ ] **30/11: revisar 404 de los tamaños retirados** y, si no hay, borrar `borrar/tamanos-2026-11-24` (645 MB). Comando en el servidor:
+- [ ] **30/11: revisar 404 de los tamaños retirados** y, si no hay, borrar `borrar/tamanos-2026-11-24` (645 MB en disco; 609 MB de contenido). Comando en el servidor:
   `grep -E '" 404 ' /etc/apache2/logs/domlogs/boletinsalesiano.pe-ssl_log | grep -E '\-(485|324)x[0-9]+\.' | tail -10`
 - [ ] **Prueba en el editor de bloques:** como Autor, arrastrar un PNG a un bloque Imagen y comprobar que el mensaje se entiende.
 - [ ] **Borrar las fotos de prueba** de la biblioteca (`IMG_20261121_155855` ×2 y la JPG subida como Autor).
@@ -13,9 +13,7 @@ Actualizado: 24/11/2026
 
 - [ ] **Corregir el informe del 18/11:** «5 o 6 tamaños» → 8 tamaños; añadir el límite de 1.920 px en el lado más largo, los avisos claros al subir y la retirada de `td_485x360` y `td_324x400` (609 MB más).
 - [ ] **CSS crítico:** 11 tipos de página generados (18-22/11); revisar que no haya parpadeo y purgar.
-- [ ] **AIOS:** retención del registro de auditoría a 30–90 días.
 - [ ] **Avatares de autores:** subirlos y purgar (`wp litespeed-purge all --allow-root`).
-- [ ] **Fotos verticales ya existentes:** calcular cuánto se ahorraría reduciéndolas al nuevo límite de 1.920 px.
 - [ ] **Borrar el resto de `/home/b0let1n/borrar/` y `/respaldos/`** cuando Rodolfo lo confirme.
 
 ## Más adelante
@@ -30,6 +28,8 @@ Actualizado: 24/11/2026
 
 ## Hecho
 
+- [x] 24/11 — Fotos verticales ya existentes: descartado (148 fotos, ahorro estimado 31 MB; no compensa).
+- [x] 24/11 — AIOS: retención del registro de auditoría revisada; tablas de 2 y 1 MB, sin acción. Revisar de nuevo en mayo de 2027.
 - [x] 24/11 — Retirados `td_485x360` y `td_324x400`: 17.731 archivos, 609 MB apartados.
 - [x] 24/11 — Carpeta local y repositorio privado en GitHub.
 - [x] 24/11 — `avisos-subida.php`: mensajes claros al rechazar PNG, vídeo o más de 15 MB.
