@@ -4,6 +4,11 @@ Las entradas más recientes, arriba.
 
 ## 24/11/2026
 
+- **Tamaños `td_485x360` y `td_324x400` retirados.** Diagnóstico: cero peticiones directas desde el 18/11; Jetpack los sirve recortando la foto principal (`?resize=`), así que los archivos del disco no se usaban. El `td_218x150` se conserva: el móvil lo pide directamente al cargar más noticias por AJAX.
+  - `tamanos-imagen.php`: añadidos a la lista de tamaños que no se generan (copia: `respaldos/tamanos-imagen.php.2026-11-24`).
+  - `limpiar-tamanos.php`: 10.432 imágenes, 17.731 archivos, 609 MB apartados a `/home/b0let1n/borrar/tamanos-2026-11-24/` y quitados de los metadatos (copia de la tabla: `respaldos/postmeta-antes-recortes-2026-11-24.sql.gz`).
+  - Cada foto nueva genera ahora 8 tamaños (antes 10).
+- **Carpeta local del proyecto** creada en `C:\dev\salesianos\www\boletinsalesiano` y respaldada en GitHub (`edubridgeswebmaster/boletinsalesiano`, privado). Cada commit se sube solo con el hook global `C:\dev\git-hooks\post-commit`.
 - **`avisos-subida.php` instalado** (mu-plugin nuevo). Motivo: al rechazar un PNG, WordPress mostraba a los Autores el mensaje genérico «El archivo no lo ha podido procesar el servidor web», que no explica nada. Ahora se muestra «No se admiten imágenes PNG. Guarda la imagen como JPG y vuelve a subirla.» (y equivalentes para vídeos y archivos de más de 15 MB).
   - v1: revisaba los archivos en `FilesAdded` → no actuaba, porque el cargador rechaza el PNG por tipo antes de ese paso.
   - v2: sustituye el mensaje `FILE_EXTENSION_ERROR` → no actuaba, porque Jetpack VideoPress (`videopress-plupload.js`) reemplaza el cargador después.
@@ -16,7 +21,7 @@ Las entradas más recientes, arriba.
 - **`comprimir-al-subir.php` instalado y probado.** jpegoptim y pngquant ya eran visibles dentro de CageFS. Foto de prueba: 2.862 KB → 922 KB, calidad 82.
 - **`tamanos-imagen.php` modificado:** el límite de 1.920 px pasa del ancho al **lado más largo**, para que las fotos verticales también se reduzcan (prueba: 1.872×4.096 → 878×1.920 px, 261 KB). Copia: `/home/b0let1n/respaldos/tamanos-imagen.php.2026-11-23`.
 - **Registros limpiados:** borrado el `error_log` de root en `public_html` (solo avisos cosméticos `session.gc_divisor` de wp-cli); apartado a `borrar/` el de `wp-admin/includes` (4 errores fatales del 19/11 causados por un escáner que pidió `admin.php` directamente, sin efecto en el sitio).
-- **Detectado:** cada foto genera 10 tamaños, no «5 o 6» como dice el informe del 18/11 → corregir el informe.
+- **Detectado:** cada foto generaba 10 tamaños, no «5 o 6» como dice el informe del 18/11 → corregir el informe (desde el 24/11 son 8).
 
 ## 17-18/11/2026 — optimización inicial
 

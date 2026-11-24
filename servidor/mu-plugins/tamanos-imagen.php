@@ -3,7 +3,7 @@
 
 // 1. No generar tamaños innecesarios
 add_filter('intermediate_image_sizes_advanced', function ($sizes) {
-    foreach (['1536x1536', '2048x2048', 'medium_large', 'td_1920x0', 'jetpack-portfolio-admin-thumb'] as $s) {
+    foreach (['1536x1536', '2048x2048', 'medium_large', 'td_1920x0', 'jetpack-portfolio-admin-thumb', 'td_485x360', 'td_324x400'] as $s) {
         unset($sizes[$s]);
     }
     return $sizes;
