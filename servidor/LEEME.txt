@@ -1,0 +1,2 @@
+Aquí se guarda la copia de los archivos del servidor.
+Se rellena con scripts\traer-del-servidor.ps1
