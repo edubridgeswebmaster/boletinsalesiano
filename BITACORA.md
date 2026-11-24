@@ -15,6 +15,10 @@ Las entradas más recientes, arriba.
   - v3 (definitiva): el mismo código, ejecutado cuando la página termina de cargar (`jQuery(function…)`). **Confirmado por Rodolfo.**
   - Copias: `/home/b0let1n/respaldos/avisos-subida.php.v1` y `.v2`.
 - **`reglas-subida.php` probado** con la cuenta de Autor `rodolfovelardeg`: bloquea PNG correctamente (ningún PNG guardado desde el 17/11).
+- **Fotos verticales ya existentes: descartado.** 148 fotos con el lado largo > 1.920 px (77 MB); ahorro estimado 31 MB, no compensa. Las nuevas ya se reducen al subirlas. Script apartado a `borrar/`.
+- **AIOS revisado:** `wpyo_aiowps_audit_log` 2 MB y `wpyo_aiowps_login_lockdown` 1 MB. Sin acción. Base de datos total 73 MB (estable desde el 18/11: 72 MB).
+- **Aclaración de cifras:** los 609 MB retirados son la suma del contenido de los archivos; los 645 MB de `borrar/tamanos-2026-11-24` son el espacio en disco (bloques de 4 KB por archivo). Ambas cifras son correctas.
+- **Pedido reutilizable para Cowork** guardado en `scripts\pedido-cowork.md`.
 
 ## 23/11/2026
 
